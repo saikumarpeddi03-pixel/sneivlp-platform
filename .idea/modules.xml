@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/sneivlp-election-service/sneivlp-election-service.iml" filepath="$PROJECT_DIR$/sneivlp-election-service/sneivlp-election-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sneivlp-eligibility-service/sneivlp-eligibility-service.iml" filepath="$PROJECT_DIR$/sneivlp-eligibility-service/sneivlp-eligibility-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sneivlp-fraud-service/sneivlp-fraud-service.iml" filepath="$PROJECT_DIR$/sneivlp-fraud-service/sneivlp-fraud-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/sneivlp-platform.iml" filepath="$PROJECT_DIR$/.idea/sneivlp-platform.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sneivlp-registry-service/sneivlp-registry-service.iml" filepath="$PROJECT_DIR$/sneivlp-registry-service/sneivlp-registry-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sneivlp-vote-lock-service/sneivlp-vote-lock-service.iml" filepath="$PROJECT_DIR$/sneivlp-vote-lock-service/sneivlp-vote-lock-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sneivlp-vote-service/sneivlp-vote-service.iml" filepath="$PROJECT_DIR$/sneivlp-vote-service/sneivlp-vote-service.iml" />
     </modules>
   </component>
 </project>
