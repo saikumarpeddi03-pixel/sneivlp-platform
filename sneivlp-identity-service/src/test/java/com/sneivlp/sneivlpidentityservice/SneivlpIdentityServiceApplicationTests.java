@@ -1,0 +1,13 @@
+package com.sneivlp.sneivlpidentityservice;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class SneivlpIdentityServiceApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
