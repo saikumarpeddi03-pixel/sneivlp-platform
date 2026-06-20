@@ -6,10 +6,41 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="sneivlp-identity-service" />
+        <module name="sneivlp-security" />
+      </profile>
+      <profile name="Annotation profile for sneivlp-platform" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
+        </processorPath>
+        <module name="sneivlp-vote-lock-service" />
+        <module name="sneivlp-api-gateway" />
+        <module name="sneivlp-audit-service" />
+        <module name="sneivlp-fraud-service" />
+        <module name="sneivlp-vote-service" />
+        <module name="sneivlp-registry-service" />
+        <module name="sneivlp-election-service" />
+        <module name="sneivlp-notification-service" />
+        <module name="sneivlp-common" />
+        <module name="sneivlp-eligibility-service" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="sneivlp-platform" target="1.5" />
-    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="sneivlp-api-gateway" options="-parameters" />
+      <module name="sneivlp-audit-service" options="-parameters" />
+      <module name="sneivlp-common" options="-parameters" />
+      <module name="sneivlp-election-service" options="-parameters" />
+      <module name="sneivlp-eligibility-service" options="-parameters" />
+      <module name="sneivlp-fraud-service" options="-parameters" />
+      <module name="sneivlp-notification-service" options="-parameters" />
+      <module name="sneivlp-registry-service" options="-parameters" />
+      <module name="sneivlp-vote-lock-service" options="-parameters" />
+      <module name="sneivlp-vote-service" options="-parameters" />
+    </option>
   </component>
 </project>

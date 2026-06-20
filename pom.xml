@@ -19,13 +19,26 @@
     </properties>
 
     <modules>
+        <!-- Shared Modules -->
         <module>sneivlp-common</module>
         <module>sneivlp-security</module>
+
+        <!-- Infrastructure -->
+        <module>sneivlp-api-gateway</module>
+
+        <!-- Business Services -->
         <module>sneivlp-identity-service</module>
-<<<<<<< HEAD
         <module>sneivlp-registry-service</module>
+        <module>sneivlp-election-service</module>
+        <module>sneivlp-eligibility-service</module>
 
->>>>>>> 2bb72ab475712408b97823d7eb8752f136259273
+        <!-- Voting Services -->
+        <module>sneivlp-vote-lock-service</module>
+        <module>sneivlp-vote-service</module>
+
+        <!-- Monitoring & Compliance -->
+        <module>sneivlp-fraud-service</module>
+        <module>sneivlp-audit-service</module>
+        <module>sneivlp-notification-service</module>
     </modules>
-
 </project>
