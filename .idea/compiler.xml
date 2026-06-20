@@ -6,8 +6,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="sneivlp-identity-service" />
-        <module name="sneivlp-security" />
       </profile>
       <profile name="Annotation profile for sneivlp-platform" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -21,11 +19,38 @@
         <module name="sneivlp-audit-service" />
         <module name="sneivlp-fraud-service" />
         <module name="sneivlp-vote-service" />
-        <module name="sneivlp-registry-service" />
         <module name="sneivlp-election-service" />
         <module name="sneivlp-notification-service" />
         <module name="sneivlp-common" />
         <module name="sneivlp-eligibility-service" />
+      </profile>
+      <profile name="Annotation profile for sneivlp-identity-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.6.3/mapstruct-processor-1.6.3.jar" />
+        </processorPath>
+        <module name="sneivlp-identity-service" />
+      </profile>
+      <profile name="Annotation profile for sneivlp-security" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="sneivlp-security" />
+      </profile>
+      <profile name="Annotation profile for sneivlp-registry-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="sneivlp-registry-service" />
       </profile>
     </annotationProcessing>
   </component>
@@ -37,8 +62,10 @@
       <module name="sneivlp-election-service" options="-parameters" />
       <module name="sneivlp-eligibility-service" options="-parameters" />
       <module name="sneivlp-fraud-service" options="-parameters" />
+      <module name="sneivlp-identity-service" options="-parameters" />
       <module name="sneivlp-notification-service" options="-parameters" />
       <module name="sneivlp-registry-service" options="-parameters" />
+      <module name="sneivlp-security" options="-parameters" />
       <module name="sneivlp-vote-lock-service" options="-parameters" />
       <module name="sneivlp-vote-service" options="-parameters" />
     </option>
