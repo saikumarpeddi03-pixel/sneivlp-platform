@@ -22,6 +22,7 @@
         <module>sneivlp-common</module>
         <module>sneivlp-security</module>
         <module>sneivlp-identity-service</module>
+        <module>sneivlp-registry-service</module>
     </modules>
 
 </project>

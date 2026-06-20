@@ -5,6 +5,12 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/sneivlp-registry-service/pom.xml" />
+        <option value="$PROJECT_DIR$/sneivlp-election-service/pom.xml" />
+        <option value="$PROJECT_DIR$/sneivlp-eligibility-service/pom.xml" />
+        <option value="$PROJECT_DIR$/sneivlp-vote-lock-service/pom.xml" />
+        <option value="$PROJECT_DIR$/sneivlp-vote-service/pom.xml" />
+        <option value="$PROJECT_DIR$/sneivlp-fraud-service/pom.xml" />
       </list>
     </option>
   </component>
