@@ -22,7 +22,10 @@
         <module>sneivlp-common</module>
         <module>sneivlp-security</module>
         <module>sneivlp-identity-service</module>
+<<<<<<< HEAD
         <module>sneivlp-registry-service</module>
+=======
+>>>>>>> 2bb72ab475712408b97823d7eb8752f136259273
     </modules>
 
 </project>
