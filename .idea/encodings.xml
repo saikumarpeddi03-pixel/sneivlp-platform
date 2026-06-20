@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/sneivlp-api-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sneivlp-audit-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sneivlp-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sneivlp-election-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sneivlp-eligibility-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sneivlp-fraud-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sneivlp-notification-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sneivlp-vote-lock-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sneivlp-vote-service/src/main/java" charset="UTF-8" />
+  </component>
+</project>
