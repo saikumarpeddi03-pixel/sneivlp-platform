@@ -10,6 +10,6 @@ public enum Roles {
     AUDITOR,
 
     INVESTIGATOR,
-    
+
     CITIZEN
 }
