@@ -1,12 +1,12 @@
 package com.sneivlpcommon.enums;
 
-public enum CitizenStatus {
+public enum UserStatus {
 
     ACTIVE,
 
     INACTIVE,
 
-    SUSPENDED,
+    LOCKED,
 
-    DECEASED;
+    DISABLED
 }
