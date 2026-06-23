@@ -1,4 +1,5 @@
 package com.sneivlp.sneivlpsecurity.role;
+
 public enum Roles {
 
     SUPER_ADMIN,
