@@ -1,8 +1,10 @@
 package com.sneivlp.sneivlpidentityservice.service;
 
 import com.sneivlp.sneivlpidentityservice.dto.request.LoginRequest;
+import com.sneivlp.sneivlpidentityservice.dto.request.LogoutRequest;
 import com.sneivlp.sneivlpidentityservice.dto.request.RefreshTokenRequest;
 import com.sneivlp.sneivlpidentityservice.dto.response.LoginResponse;
+import com.sneivlp.sneivlpidentityservice.dto.response.LogoutResponse;
 import com.sneivlp.sneivlpidentityservice.dto.response.RefreshTokenResponse;
 
 public interface AuthenticationService {
@@ -11,4 +13,6 @@ public interface AuthenticationService {
 
     RefreshTokenResponse refreshToken(
             RefreshTokenRequest request);
+
+    LogoutResponse logout( String accessToken ,LogoutRequest request);
 }

@@ -1,16 +1,23 @@
 package com.sneivlp.sneivlpidentityservice.service.impl;
 
 import com.sneivlp.sneivlpidentityservice.dto.request.LoginRequest;
+import com.sneivlp.sneivlpidentityservice.dto.request.LogoutRequest;
 import com.sneivlp.sneivlpidentityservice.dto.request.RefreshTokenRequest;
 import com.sneivlp.sneivlpidentityservice.dto.response.LoginResponse;
+import com.sneivlp.sneivlpidentityservice.dto.response.LogoutResponse;
 import com.sneivlp.sneivlpidentityservice.dto.response.RefreshTokenResponse;
+import com.sneivlp.sneivlpidentityservice.entity.RefreshToken;
 import com.sneivlp.sneivlpidentityservice.entity.User;
+import com.sneivlp.sneivlpidentityservice.repository.RefreshTokenRepository;
 import com.sneivlp.sneivlpidentityservice.repository.UserRepository;
 import com.sneivlp.sneivlpidentityservice.service.AuthenticationService;
 import com.sneivlp.sneivlpsecurity.jwt.JwtTokenProvider;
 import com.sneivlpcommon.exceptions.BusinessException;
+import com.sneivlpcommon.exceptions.ResourceNotFoundException;
+import jakarta.transaction.Transactional;
 import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +28,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtTokenProvider jwtTokenProvider;
+    private final RefreshTokenRepository refreshTokenRepository;
 
 
     @Override
@@ -67,5 +75,19 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         );
     }
 
+    @Override
+    @Transactional
+
+    public LogoutResponse logout( String accessToken ,LogoutRequest request) {
+
+        RefreshToken refreshToken =  refreshTokenRepository.findByToken(request.getRefreshToken())
+                .orElseThrow(() -> new ResourceNotFoundException("Invalid RefreshToken"));
+
+        refreshToken.getRevoked();
+        refreshTokenRepository.save(refreshToken);
+        SecurityContextHolder.clearContext();
+        return  new LogoutResponse(
+                "Logout successful");
+    }
 
 }

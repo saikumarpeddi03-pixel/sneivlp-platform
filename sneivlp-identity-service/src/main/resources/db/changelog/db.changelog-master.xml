@@ -17,5 +17,7 @@
 
     <include file="db/changelog/create-users-table.xml"/>
 
+    <include file="db/changelog/V4-create-refresh-tokens-table.xml"/>
+
 
 </databaseChangeLog>
