@@ -1,7 +1,9 @@
 package com.sneivlp.sneivlpidentityservice.controller;
 
 import com.sneivlp.sneivlpidentityservice.dto.request.LoginRequest;
+import com.sneivlp.sneivlpidentityservice.dto.request.RefreshTokenRequest;
 import com.sneivlp.sneivlpidentityservice.dto.response.LoginResponse;
+import com.sneivlp.sneivlpidentityservice.dto.response.RefreshTokenResponse;
 import com.sneivlp.sneivlpidentityservice.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,5 +22,11 @@ public class AuthController {
     @PostMapping("/login")
     public LoginResponse login(@RequestBody LoginRequest loginRequest){
         return authenticationService.login(loginRequest);
+    }
+
+    @PostMapping("/refresh")
+    public RefreshTokenResponse refreshToken(@RequestBody RefreshTokenRequest refreshTokenRequest){
+        
+        return authenticationService.refreshToken(refreshTokenRequest);
     }
 }

@@ -15,15 +15,11 @@ public class JwtTokenProviderImpl implements JwtTokenProvider {
 
         Date now = new Date();
 
-        Date expiryDate = new Date(
-                now.getTime() +
-                        JwtConstants.ACCESS_TOKEN_EXPIRATION
-        );
-
         return Jwts.builder()
                 .subject(username)
                 .issuedAt(now)
-                .expiration(expiryDate)
+                .expiration(new Date(now.getTime()
+                        + JwtConstants.ACCESS_TOKEN_EXPIRATION))
                 .signWith(JwtUtils.getSigningKey())
                 .compact();
     }
@@ -32,7 +28,16 @@ public class JwtTokenProviderImpl implements JwtTokenProvider {
 
     @Override
     public String refreshToken(String refreshToken) {
-        return "";
+
+        Date now = new Date();
+
+        return Jwts.builder()
+                .subject((refreshToken))
+                .issuedAt(now)
+                .expiration(new Date(now.getTime()
+                        + JwtConstants.ACCESS_TOKEN_EXPIRATION))
+                .signWith(JwtUtils.getSigningKey())
+                .compact();
     }
 
     @Override

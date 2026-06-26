@@ -1,12 +1,15 @@
 package com.sneivlp.sneivlpidentityservice.service.impl;
 
 import com.sneivlp.sneivlpidentityservice.dto.request.LoginRequest;
+import com.sneivlp.sneivlpidentityservice.dto.request.RefreshTokenRequest;
 import com.sneivlp.sneivlpidentityservice.dto.response.LoginResponse;
+import com.sneivlp.sneivlpidentityservice.dto.response.RefreshTokenResponse;
 import com.sneivlp.sneivlpidentityservice.entity.User;
 import com.sneivlp.sneivlpidentityservice.repository.UserRepository;
 import com.sneivlp.sneivlpidentityservice.service.AuthenticationService;
 import com.sneivlp.sneivlpsecurity.jwt.JwtTokenProvider;
 import com.sneivlpcommon.exceptions.BusinessException;
+import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -35,13 +38,34 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         String token = jwtTokenProvider
                 .generateToken(user.getUsername());
 
+        String refreshtoken= jwtTokenProvider.refreshToken(user.getUsername());
+
         return new LoginResponse(
                 token,
+                refreshtoken,
                 "Bearer",
                 user.getUsername(),
                 user.getRole()
         );
 
     }
+
+    @Override
+    public RefreshTokenResponse refreshToken(RefreshTokenRequest request) {
+        if(!jwtTokenProvider.validateToken(request.getRefreshToken())) {
+            throw new BusinessException("Invalid RefreshToken");
+        }
+        String username = jwtTokenProvider.refreshToken(request.getRefreshToken());
+
+        String token = jwtTokenProvider.generateToken(username);
+
+        return new  RefreshTokenResponse(
+                token,
+                request.getRefreshToken(),
+                "Bearer"
+
+        );
+    }
+
 
 }
