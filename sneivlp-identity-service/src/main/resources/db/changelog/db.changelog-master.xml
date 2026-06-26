@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+        http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.31.xsd">
+
+    <include file="db/changelog/V1__create_citizens_table.xml"/>
+
+    <include file="db/changelog/V2_create_citizen_biometrics_table.xml"/>
+
+    <include file="db/changelog/V3_create_citizen_documents_table.xml"/>
+
+    <include file="db/changelog/V4_create_citizen_verifications_table.xml"/>
+
+    <include file="db/changelog/create-users-table.xml"/>
+
+
+</databaseChangeLog>
