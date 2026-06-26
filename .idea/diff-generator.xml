@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DiffGenerationConfig">
+    <option name="snapshotDb" value="false" />
+    <option name="snapshotModelValue" value="sneivlp-eligibility-service:sneivlp-eligibility-service" />
+    <option name="sourceModelValue" value="sneivlp-identity-service:sneivlp-identity-service" />
+    <option name="targetDbValue" value="58feb1ce-46f2-4d73-b5c9-e7fd560572a4" />
+  </component>
+</project>

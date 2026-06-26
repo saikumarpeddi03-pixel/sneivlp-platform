@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="2026-06-23-create-citizen-documents" author="saikumar">
+
+        <createTable tableName="citizen_documents">
+
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"
+                             nullable="false"/>
+            </column>
+
+            <column name="citizen_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="document_type" type="VARCHAR(100)"/>
+
+            <column name="document_number" type="VARCHAR(100)"/>
+
+            <column name="document_url" type="VARCHAR(500)"/>
+
+            <column name="verified" type="BOOLEAN"/>
+
+            <column name="created_date" type="TIMESTAMP"/>
+
+            <column name="updated_date" type="TIMESTAMP"/>
+
+            <column name="created_by" type="VARCHAR(100)"/>
+
+            <column name="updated_by" type="VARCHAR(100)"/>
+
+            <column name="is_active" type="BOOLEAN"/>
+
+            <column name="is_deleted" type="BOOLEAN"/>
+
+        </createTable>
+
+        <addForeignKeyConstraint
+                baseTableName="citizen_documents"
+                baseColumnNames="citizen_id"
+                referencedTableName="citizens"
+                referencedColumnNames="id"
+                constraintName="fk_citizen_documents_citizen"/>
+
+        <createIndex
+                tableName="citizen_documents"
+                indexName="idx_citizen_documents_citizen_id">
+
+            <column name="citizen_id"/>
+
+        </createIndex>
+
+        <createIndex
+                tableName="citizen_documents"
+                indexName="idx_citizen_documents_document_number">
+
+            <column name="document_number"/>
+
+        </createIndex>
+
+    </changeSet>
+</databaseChangeLog>

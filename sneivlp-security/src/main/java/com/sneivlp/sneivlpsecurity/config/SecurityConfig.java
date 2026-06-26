@@ -45,18 +45,18 @@ public class SecurityConfig {
                         .accessDeniedHandler(jwtAccessDeniedHandler()))
 
                 .authorizeHttpRequests(auth -> auth
-
                         .requestMatchers(
                                 "/swagger-ui.html",
                                 "/swagger-ui/**",
                                 "/v3/api-docs/**",
-                                "/actuator/**"
+                                "/actuator/**",
+                                "/api/v1/auth/login",
+                                "/api/v1/user/**"
                         ).permitAll()
-
                         .anyRequest().authenticated()
                 )
 
-                .httpBasic(Customizer.withDefaults());
+                .httpBasic(httpBasic -> httpBasic.disable());
 
         http.addFilterBefore(
                 jwtAuthenticationFilter,

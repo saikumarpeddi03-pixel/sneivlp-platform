@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="2026-06-23-create-citizen-verifications" author="saikumar">
+
+        <createTable tableName="citizen_verifications">
+
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"
+                             nullable="false"/>
+            </column>
+
+            <column name="citizen_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="verification_status" type="VARCHAR(50)"/>
+
+            <column name="verified_by" type="VARCHAR(100)"/>
+
+            <column name="verified_date" type="TIMESTAMP"/>
+
+            <column name="remarks" type="VARCHAR(1000)"/>
+
+            <column name="created_date" type="TIMESTAMP"/>
+
+            <column name="updated_date" type="TIMESTAMP"/>
+
+            <column name="created_by" type="VARCHAR(100)"/>
+
+            <column name="updated_by" type="VARCHAR(100)"/>
+
+            <column name="is_active" type="BOOLEAN"/>
+
+            <column name="is_deleted" type="BOOLEAN"/>
+
+        </createTable>
+
+        <addForeignKeyConstraint
+                baseTableName="citizen_verifications"
+                baseColumnNames="citizen_id"
+                referencedTableName="citizens"
+                referencedColumnNames="id"
+                constraintName="fk_citizen_verifications_citizen"/>
+
+        <createIndex
+                tableName="citizen_verifications"
+                indexName="idx_citizen_verifications_citizen_id">
+
+            <column name="citizen_id"/>
+
+        </createIndex>
+
+        <createIndex
+                tableName="citizen_verifications"
+                indexName="idx_citizen_verifications_status">
+
+            <column name="verification_status"/>
+
+        </createIndex>
+
+    </changeSet>
+</databaseChangeLog>

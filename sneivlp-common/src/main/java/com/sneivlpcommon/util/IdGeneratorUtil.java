@@ -9,4 +9,9 @@ public final class IdGeneratorUtil {
     public static String generateUUID() {
         return UUID.randomUUID().toString();
     }
+
+    public static String generateCitizenId() {
+
+        return "CIT-" + System.currentTimeMillis();
+    }
 }
